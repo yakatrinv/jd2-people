@@ -1,0 +1,28 @@
+CREATE SCHEMA Peolple;
+
+CREATE TABLE Person (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    age INT,
+    salary DECIMAL,
+    passport char(10),
+    address varchar(200),
+    dateOfBirthday DATE,
+    dateTimeCreate DATETIME,
+    timeToLunch TIME,
+    letter TEXT
+);
+
+INSERT INTO person (age, salary, passport, address, dateOfBirthday, dateTimeCreate, timeToLunch, letter)
+VALUE (32,2000,'4150492001','Minsk',1992-04-15,now(),'13:30','klskdmclkm')
+;
+
+INSERT INTO person (age, salary, passport, address, dateOfBirthday, dateTimeCreate, timeToLunch, letter)
+    VALUES
+        (20,1000,'4250692002','Minsk','2002-06-25',now(),'13:30','jsdnksn'),
+        (25,1300,'4250992003','Minsk','2002-09-07',now(),'13:30','jsdnksn'),
+        (27,1000,'4250692004','Minsk','1999-02-27',now(),'13:30','jsdnksn'),
+        (29,1000,'4250692005','Minsk','1980-11-04',now(),'13:30','jsdnksn');
+
+SELECT * FROM person
+WHERE age>21
+ORDER BY dateTimeCreate;
